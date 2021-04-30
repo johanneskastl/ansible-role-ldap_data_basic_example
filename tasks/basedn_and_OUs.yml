@@ -1,0 +1,23 @@
+---
+# ldap_data_basic_example/tasks/basedn_and_ous.yml
+
+- name: 'Create the baseDN'
+  ldap_entry:
+    dn: "{{ base_dn }}"
+    objectClass:
+      - 'domain'
+      - 'dcObject'
+
+- name: 'Create the users OU'
+  ldap_entry:
+    dn: "{{ users_ou }},{{ base_dn }}"
+    objectClass:
+      - 'top'
+      - 'organizationalUnit'
+
+- name: 'Create the groups OU'
+  ldap_entry:
+    dn: "{{ groups_ou }},{{ base_dn }}"
+    objectClass:
+      - 'top'
+      - 'organizationalUnit'
