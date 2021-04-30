@@ -1,0 +1,41 @@
+---
+# ldap_data_basic_example/tasks/regular_users.yml
+
+- name: 'Create regular users'
+  ldap_entry:
+    dn: "{{ item.dn }},{{ users_ou }},{{ base_dn }}"
+    objectClass:
+      - 'posixAccount'
+      - 'inetOrgPerson'
+      - 'organizationalPerson'
+      - 'person'
+    attributes:
+      loginshell: '/bin/bash'
+      homeDirectory: "/home/{{ item.uid }}"
+      userPassword: "{{ regular_users_password_hash }}"
+      uid: "{{ item.uid }}"
+      uidNumber: "{{ item.uidnumber }}"
+      gidNumber: "{{ item.gidnumber }}"
+      sn: "{{ item.sn }}"
+      givenName: "{{ item.givenname }}"
+  with_items:
+    - dn: 'cn=Harry Potter'
+      uid: 'hpotter'
+      uidnumber: '10001'
+      gidnumber: '10001'
+      sn: 'Potter'
+      givenname: 'Harry'
+    - dn: 'cn=Hermione Granger'
+      uid: 'hgranger'
+      uidnumber: '10002'
+      gidnumber: '10002'
+      sn: 'Granger'
+      givenname: 'Hermione'
+    - dn: 'cn=Ron Weasley'
+      uid: 'rweasley'
+      uidnumber: '10003'
+      gidnumber: '10003'
+      sn: 'Weasley'
+      givenname:
+        - 'Ronald'
+        - 'Bilius'
