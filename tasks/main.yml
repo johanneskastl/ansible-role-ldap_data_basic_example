@@ -1,6 +1,16 @@
 ---
 # ldap_data_basic_example/tasks/main.yml
 
+- name: 'Load variables'
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "vars_{{ ansible_distribution | replace(' ', '_' ) }}{{ ansible_distribution_major_version }}.yml"
+    - "vars_{{ ansible_distribution | replace(' ', '_' ) }}.yml"
+    - "vars_{{ ansible_os_family }}.yml"
+  tags:
+    - 'installation'
+    - 'configuration'
+
 - name: 'Run install_packages.yml'
   include_tasks: install_packages.yml
 
