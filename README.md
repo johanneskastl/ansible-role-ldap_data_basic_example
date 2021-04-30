@@ -15,7 +15,8 @@ None.
 Role Variables
 --------------
 
-None.
+- `ldap_admin_password_hash`: (required) hashed password for the ldap-admin user
+- `regular_users_password_hash`: (required) hashed password for the regular users
 
 Dependencies
 ------------
