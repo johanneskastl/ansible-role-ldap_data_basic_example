@@ -1,0 +1,7 @@
+---
+# ldap_data_basic_example/tasks/install_packages.yml
+
+- name: "Install packages required by Ansible's ldap_attr and ldap_entry modules"
+  package:
+    name: "{{ required_packages }}"
+    state: 'present'
