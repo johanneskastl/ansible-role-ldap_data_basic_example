@@ -39,3 +39,57 @@
       givenname:
         - 'Ronald'
         - 'Bilius'
+
+- name: 'Make sure all attributes are correct for Harry Potter'
+  ldap_attr:
+    dn: "cn=Harry Potter,{{ users_ou }},{{ base_dn }}"
+    name: "{{ item.key }}"
+    values: "{{ item.value }}"
+  loop: "{{ user_details | dict2items }}"
+  vars:
+    user_details:
+      loginShell: '/bin/bash'
+      homeDirectory: '/home/hpotter'
+      userPassword: "{{ regular_users_password_hash }}"
+      uid: 'hpotter'
+      uidNumber: '10001'
+      gidNumber: '10001'
+      sn: 'Potter'
+      givenName: 'Harry'
+
+- name: 'Make sure all attributes are correct for Hermione Granger'
+  ldap_attr:
+    dn: "cn=Hermione Granger,{{ users_ou }},{{ base_dn }}"
+    name: "{{ item.key }}"
+    values: "{{ item.value }}"
+  loop: "{{ user_details | dict2items }}"
+  vars:
+    user_details:
+      loginShell: '/bin/bash'
+      homeDirectory: '/home/hgranger'
+      userPassword: "{{ regular_users_password_hash }}"
+      uid: 'hgranger'
+      uidNumber: '10002'
+      gidNumber: '10002'
+      sn: 'Granger'
+      givenName: 'Hermione'
+
+- name: 'Make sure all attributes are correct for Ron Weasley'
+  ldap_attr:
+    dn: "cn=Ron Weasley,{{ users_ou }},{{ base_dn }}"
+    name: "{{ item.key }}"
+    values: "{{ item.value }}"
+    state: 'exact'
+  loop: "{{ user_details | dict2items }}"
+  vars:
+    user_details:
+      loginShell: '/bin/bash'
+      homeDirectory: '/home/rweasley'
+      userPassword: "{{ regular_users_password_hash }}"
+      uid: 'rweasley'
+      uidNumber: '10003'
+      gidNumber: '10003'
+      sn: 'Weasley'
+      givenName:
+        - 'Ronald'
+        - 'Bilius'
