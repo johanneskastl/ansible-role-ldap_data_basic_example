@@ -3,3 +3,6 @@
 
 - name: 'Run basedn_and_OUs.yml'
   include_tasks: basedn_and_OUs.yml
+
+- name: 'Run ldap-admin.yml'
+  include_tasks: ldap-admin.yml
