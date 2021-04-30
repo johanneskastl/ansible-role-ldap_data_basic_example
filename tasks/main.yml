@@ -1,0 +1,5 @@
+---
+# ldap_data_basic_example/tasks/main.yml
+
+- name: 'Run basedn_and_OUs.yml'
+  include_tasks: basedn_and_OUs.yml
