@@ -20,5 +20,8 @@
 - name: 'Run ldap-admin.yml'
   include_tasks: ldap-admin.yml
 
+- name: 'Run sssd_user.yml'
+  include_tasks: sssd_user.yml
+
 - name: 'Run regular_users.yml'
   include_tasks: regular_users.yml
