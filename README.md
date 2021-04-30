@@ -16,6 +16,7 @@ Role Variables
 --------------
 
 - `ldap_admin_password_hash`: (required) hashed password for the ldap-admin user
+- `sssd_user_password_hash`: (required) hashed password for the sssd-user user
 - `regular_users_password_hash`: (required) hashed password for the regular users
 
 Dependencies
