@@ -1,0 +1,6 @@
+---
+# ldap_data_basic_example/vars/vars_Debian.yml
+
+# packages required by Ansible's ldap_attr and ldap_entry modules
+required_packages:
+  - 'python-ldap'
