@@ -1,0 +1,12 @@
+---
+# ldap_data_basic_example/tasks/ldap-admin.yml
+
+- name: 'Create ldap-admin user'
+  ldap_entry:
+    dn: "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
+    objectClass:
+      - 'top'
+      - 'account'
+      - 'simpleSecurityObject'
+    attributes:
+      userPassword: "{{ ldap_admin_password_hash }}"
