@@ -1,0 +1,6 @@
+---
+# ldap_data_basic_example/defaults/main.yml
+
+base_dn: 'dc=training,dc=b1-systems,dc=de'
+users_ou: 'ou=users'
+groups_ou: 'ou=groups'
