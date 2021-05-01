@@ -39,6 +39,13 @@
       givenname:
         - 'Ronald'
         - 'Bilius'
+  register: create_regular_users
+
+- name: 'Create fact to ignore errors when in check_mode and the user would be created'
+  set_fact:
+    ignore_errors_regular_users: 'true'
+  when: 'create_regular_users.changed | bool and ansible_check_mode | bool'
+  check_mode: 'false'
 
 - name: 'Make sure all attributes are correct for Harry Potter'
   ldap_attr:
@@ -56,6 +63,7 @@
       gidNumber: '10001'
       sn: 'Potter'
       givenName: 'Harry'
+  ignore_errors: "{{ ignore_errors_regular_users }}"
 
 - name: 'Make sure all attributes are correct for Hermione Granger'
   ldap_attr:
@@ -73,6 +81,7 @@
       gidNumber: '10002'
       sn: 'Granger'
       givenName: 'Hermione'
+  ignore_errors: "{{ ignore_errors_regular_users }}"
 
 - name: 'Make sure all attributes are correct for Ron Weasley'
   ldap_attr:
@@ -93,3 +102,4 @@
       givenName:
         - 'Ronald'
         - 'Bilius'
+  ignore_errors: "{{ ignore_errors_regular_users }}"
