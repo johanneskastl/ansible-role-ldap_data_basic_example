@@ -10,3 +10,9 @@
       - 'simpleSecurityObject'
     attributes:
       userPassword: "{{ sssd_user_password_hash }}"
+
+- name: 'Make sure all attributes are correct for sssd-user'
+  ldap_attr:
+    dn: "uid=sssd-user,{{ users_ou }},{{ base_dn }}"
+    name: 'userPassword'
+    values: "{{ sssd_user_password_hash }}"
