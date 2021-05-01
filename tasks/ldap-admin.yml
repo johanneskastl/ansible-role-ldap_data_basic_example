@@ -10,3 +10,9 @@
       - 'simpleSecurityObject'
     attributes:
       userPassword: "{{ ldap_admin_password_hash }}"
+
+- name: 'Make sure all attributes are correct for ldap-admin'
+  ldap_attr:
+    dn: "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
+    name: 'userPassword'
+    values: "{{ ldap_admin_password_hash }}"
