@@ -10,9 +10,17 @@
       - 'simpleSecurityObject'
     attributes:
       userPassword: "{{ ldap_admin_password_hash }}"
+  register: create_ldap_admin
+
+- name: 'Create fact to ignore errors when in check_mode and the user would be created'
+  set_fact:
+    ignore_errors_ldap_admin: 'true'
+  when: 'create_ldap_admin.changed | bool and ansible_check_mode | bool'
+  check_mode: 'false'
 
 - name: 'Make sure all attributes are correct for ldap-admin'
   ldap_attr:
     dn: "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
     name: 'userPassword'
     values: "{{ ldap_admin_password_hash }}"
+  ignore_errors: "{{ ignore_errors_ldap_admin }}"
