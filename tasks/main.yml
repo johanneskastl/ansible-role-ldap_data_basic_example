@@ -29,3 +29,7 @@
 - name: 'Run regular_users.yml'
   include_tasks: regular_users.yml
   when: 'not remove_everything | bool'
+
+- name: 'Run delete_everything.yml'
+  include_tasks: delete_everything.yml
+  when: 'remove_everything | bool'
