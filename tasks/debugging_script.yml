@@ -8,3 +8,25 @@
     owner: 'root'
     group: 'root'
     mode: '0700'
+
+- name: 'Create the directory /root/LDAP_configuration_via_ansible/'
+  file:
+    path: '/root/LDAP_configuration_via_ansible/'
+    state: 'directory'
+    owner: 'root'
+    group: 'root'
+    mode: '0700'
+
+- name: 'Create files to manually create the users and OUs'
+  template:
+    src: "{{ item }}.j2"
+    dest: "/root/LDAP_configuration_via_ansible/{{ item }}"
+    owner: 'root'
+    group: 'root'
+    mode: '0600'
+  loop:
+    - 'step1_basedn.ldif'
+    - 'step2_users_and_groups_ous.ldif'
+    - 'step3_ldap-admin.ldif'
+    - 'step4_sssd-user.ldif'
+    - 'step5_regular_users.ldif'
