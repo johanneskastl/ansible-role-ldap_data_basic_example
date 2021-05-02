@@ -1,0 +1,10 @@
+---
+# ldap_data_basic_example/tasks/debugging_script.yml
+
+- name: 'Create debugging script'
+  template:
+    src: 'ldap_acl_debugging.sh.j2'
+    dest: '/root/ldap_acl_debugging.sh'
+    owner: 'root'
+    group: 'root'
+    mode: '0700'
