@@ -1,6 +1,9 @@
 ---
 # ldap_data_basic_example/defaults/main.yml
 
+# role logic
+remove_everything: 'false'
+
 # default values for the tree
 base_dn: 'dc=training,dc=b1-systems,dc=de'
 users_ou: 'ou=users'
