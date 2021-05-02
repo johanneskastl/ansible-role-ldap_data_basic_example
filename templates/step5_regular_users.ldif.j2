@@ -1,0 +1,50 @@
+dn: cn=posix_user_group,ou=groups,dc=training,dc=b1-systems,dc=de
+objectClass: posixGroup
+gidNumber: 9999
+cn: posix_user_group
+
+dn: cn=Harry Potter,ou=users,dc=training,dc=b1-systems,dc=de
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+loginshell: /bin/bash
+homeDirectory: /home/hpotter
+uid: hpotter
+cn: Harry Potter
+userPassword: {SSHA}D36z6kJdEP4U1lh3aC0p6H5kTEG9Lxx8
+uidNumber: 10001
+gidNumber: 10001
+sn: Potter
+givenName: Harry
+
+dn: cn=Hermione Granger,ou=users,dc=training,dc=b1-systems,dc=de
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+loginshell: /bin/bash
+homeDirectory: /home/hgranger
+uid: hgranger
+cn: Hermione Granger
+userPassword: {SSHA}D36z6kJdEP4U1lh3aC0p6H5kTEG9Lxx8
+uidNumber: 10002
+gidNumber: 10002
+sn: Granger
+givenName: Hermione
+
+dn: cn=Ron Weasley,ou=users,dc=training,dc=b1-systems,dc=de
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+loginshell: /bin/bash
+homeDirectory: /home/rweasley
+uid: rweasly
+cn: Ronald Bilius Weasley
+userPassword: {SSHA}D36z6kJdEP4U1lh3aC0p6H5kTEG9Lxx8
+uidNumber: 10003
+gidNumber: 10003
+sn: Weasley
+givenName: Ronald
+givenName: Bilius
