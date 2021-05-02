@@ -17,7 +17,7 @@
     group: 'root'
     mode: '0700'
 
-- name: 'Create files to manually create the users and OUs'
+- name: 'Create files to manually create and delete the users and groups'
   template:
     src: "{{ item }}.j2"
     dest: "/root/LDAP_configuration_via_ansible/{{ item }}"
@@ -30,3 +30,8 @@
     - 'step3_ldap-admin.ldif'
     - 'step4_sssd-user.ldif'
     - 'step5_regular_users.ldif'
+    - 'DELETE_step1_basedn.ldapdelete'
+    - 'DELETE_step2_users_and_groups_ous.ldapdelete'
+    - 'DELETE_step3_ldap-admin.ldapdelete'
+    - 'DELETE_step4_sssd-user.ldapdelete'
+    - 'DELETE_step5_regular_users.ldapdelete'
