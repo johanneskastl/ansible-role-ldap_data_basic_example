@@ -16,12 +16,16 @@
 
 - name: 'Run basedn_and_OUs.yml'
   include_tasks: basedn_and_OUs.yml
+  when: 'not remove_everything | bool'
 
 - name: 'Run ldap-admin.yml'
   include_tasks: ldap-admin.yml
+  when: 'not remove_everything | bool'
 
 - name: 'Run sssd_user.yml'
   include_tasks: sssd_user.yml
+  when: 'not remove_everything | bool'
 
 - name: 'Run regular_users.yml'
   include_tasks: regular_users.yml
+  when: 'not remove_everything | bool'
