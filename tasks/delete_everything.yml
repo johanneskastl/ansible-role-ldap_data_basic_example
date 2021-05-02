@@ -12,14 +12,15 @@
     - "uid=sssd-user,{{ users_ou }},{{ base_dn }}"
     - "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
 
-- name: 'Delete groups and baseDN'
+- name: 'Delete groups'
   ldap_entry:
     dn: "{{ item }}"
     state: 'absent'
   loop:
     - "{{ users_ou }},{{ base_dn }}"
     - "{{ groups_ou }},{{ base_dn }}"
-    - "{{ base_dn }}"
+
+# FIXME: the base DN cannot be deleted this way
 
 - name: 'Delete ACLs'
   ldap_attr:
