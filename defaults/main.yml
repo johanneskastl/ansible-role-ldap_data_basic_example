@@ -4,6 +4,7 @@
 # role logic
 apply_ACLs: 'true'
 remove_everything: 'false'
+add_debugging_script: 'false'
 
 # default values for the tree
 base_dn: 'dc=training,dc=b1-systems,dc=de'
