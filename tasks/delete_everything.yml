@@ -20,7 +20,7 @@
     - "{{ users_ou }},{{ base_dn }}"
     - "{{ groups_ou }},{{ base_dn }}"
 
-# FIXME: the base DN cannot be deleted this way
+# The base DN cannot be deleted...
 
 - name: 'Delete ACLs'
   ldap_attr:
