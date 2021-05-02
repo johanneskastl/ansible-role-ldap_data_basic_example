@@ -2,6 +2,7 @@
 # ldap_data_basic_example/defaults/main.yml
 
 # role logic
+apply_ACLs: 'true'
 remove_everything: 'false'
 
 # default values for the tree
