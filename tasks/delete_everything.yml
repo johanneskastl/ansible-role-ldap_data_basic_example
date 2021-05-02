@@ -1,0 +1,29 @@
+---
+# ldap_data_basic_example/tasks/delete_everything.yml
+
+- name: 'Delete regular users, sssd-user and ldap-admin'
+  ldap_entry:
+    dn: "{{ item }}"
+    state: 'absent'
+  loop:
+    - "cn=Harry Potter,{{ users_ou }},{{ base_dn }}"
+    - "cn=Hermione Granger,{{ users_ou }},{{ base_dn }}"
+    - "cn=Ron Weasley,{{ users_ou }},{{ base_dn }}"
+    - "uid=sssd-user,{{ users_ou }},{{ base_dn }}"
+    - "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
+
+- name: 'Delete groups and baseDN'
+  ldap_entry:
+    dn: "{{ item }}"
+    state: 'absent'
+  loop:
+    - "{{ users_ou }},{{ base_dn }}"
+    - "{{ groups_ou }},{{ base_dn }}"
+    - "{{ base_dn }}"
+
+- name: 'Delete ACLs'
+  ldap_attr:
+    dn: 'olcDatabase={2}mdb,cn=config'
+    name: 'olcAccess'
+    values: '[]'
+    state: 'absent'
