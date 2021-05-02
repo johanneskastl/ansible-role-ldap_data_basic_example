@@ -28,3 +28,8 @@
     name: 'olcAccess'
     values: '[]'
     state: 'absent'
+
+- name: 'Delete the debugging script'
+  file:
+    path: '/root/ldap_acl_debugging.sh'
+    state: 'absent'
