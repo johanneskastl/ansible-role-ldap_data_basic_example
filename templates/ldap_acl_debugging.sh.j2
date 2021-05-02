@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# common options
+ldapsearch_args="-b {{ base_dn }} -H ldapi:///"
+ldapsearch_external="ldapsearch -LLL -Q -Y EXTERNAL"
+ldapsearch_simple_bind="ldapsearch -LLL -x"
+
+##############################################################
+echo "ldapsearch as rootDN"
+$ldapsearch_simple_bind $ldapsearch_args -D cn=b1admin,{{ base_dn }} -w {{ rootdn_password }} "(cn=Ron Weasley)" uid
+echo "####################"
+echo ""
+
+##############################################################
+echo "ldapsearch as EXTERNAL"
+#$ldapsearch_external $ldapsearch_args "(cn=Ron Weasley)"
+ldapsearch -LLL -Q -Y EXTERNAL $ldapsearch_args "(cn=Ron Weasley)" uid
+echo "####################"
+echo ""
+
+##############################################################
+echo "ldapsearch as ldap-admin"
+$ldapsearch_simple_bind $ldapsearch_args -D uid=ldap-admin,{{ users_ou }},{{ base_dn }} -w {{ ldap_admin_password }} "(cn=Ron Weasley)" uid
+echo "####################"
+echo ""
+
+##############################################################
+echo "ldapsearch as sssd-user"
+$ldapsearch_simple_bind $ldapsearch_args -D uid=sssd-user,{{ users_ou }},{{ base_dn }} -w {{ sssd_user_password }} "(cn=Ron Weasley)" uid
+echo "####################"
+echo ""
+
+##############################################################
+echo "ldapsearch as unprivileged user"
+$ldapsearch_simple_bind $ldapsearch_args -D uid=sssd-user,{{ users_ou }},{{ base_dn }} -w {{ regular_users_password }} "(cn=Ron Weasley)" uid
+echo "####################"
+echo ""
