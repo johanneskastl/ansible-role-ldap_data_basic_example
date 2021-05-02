@@ -32,7 +32,9 @@
 
 - name: 'Run acls.yml'
   include_tasks: acls.yml
-  when: 'not remove_everything | bool'
+  when:
+    - 'not remove_everything | bool'
+    - 'apply_ACLs | bool'
 
 - name: 'Run delete_everything.yml'
   include_tasks: delete_everything.yml
