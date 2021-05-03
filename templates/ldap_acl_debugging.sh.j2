@@ -24,8 +24,7 @@ $ldapsearch_simple_bind $ldapsearch_args -D uid=ldap-admin,{{ users_ou }},{{ bas
 echo "####################"
 echo "ldapsearch for Ron as sssd-user"
 $ldapsearch_simple_bind $ldapsearch_args -D uid=sssd-user,{{ users_ou }},{{ base_dn }} -w {{ sssd_user_password }} "(cn=Ron Weasley)" dn
-echo ""
-echo "####################"
+
 echo "ldapsearch for Harry as sssd-user"
 $ldapsearch_simple_bind $ldapsearch_args -D uid=sssd-user,{{ users_ou }},{{ base_dn }} -w {{ sssd_user_password }} "(cn=Harry Potter)" dn
 
@@ -33,8 +32,7 @@ $ldapsearch_simple_bind $ldapsearch_args -D uid=sssd-user,{{ users_ou }},{{ base
 echo "####################"
 echo "ldapsearch for own DN as unprivileged user"
 $ldapsearch_simple_bind $ldapsearch_args -D "cn=Ron Weasley,{{ users_ou }},{{ base_dn }}" -w {{ regular_users_password }} "(cn=Ron Weasley)" dn
-echo ""
-echo "####################"
+
 echo "ldapsearch for other DN as unprivileged user"
 $ldapsearch_simple_bind $ldapsearch_args -D "cn=Ron Weasley,{{ users_ou }},{{ base_dn }}" -w {{ regular_users_password }} "(cn=Harry Potter)" dn
 
