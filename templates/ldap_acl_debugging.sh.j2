@@ -41,4 +41,4 @@ $ldapsearch_simple_bind $ldapsearch_args -D "cn=Ron Weasley,{{ users_ou }},{{ ba
 ##############################################################
 echo "####################"
 echo "ldapsearch as anonymous (should fail with 'No such object (32)')"
-ldapsearch -x $ldapsearch_args "(cn=Ron Weasley)" dn
+$ldapsearch_simple_bind $ldapsearch_args "(cn=Ron Weasley)" dn
