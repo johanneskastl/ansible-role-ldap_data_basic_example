@@ -52,6 +52,7 @@
     dn: "cn=Harry Potter,{{ users_ou }},{{ base_dn }}"
     name: "{{ item.key }}"
     values: "{{ item.value }}"
+    state: 'exact'
   loop: "{{ user_details | dict2items }}"
   vars:
     user_details:
@@ -70,6 +71,7 @@
     dn: "cn=Hermione Granger,{{ users_ou }},{{ base_dn }}"
     name: "{{ item.key }}"
     values: "{{ item.value }}"
+    state: 'exact'
   loop: "{{ user_details | dict2items }}"
   vars:
     user_details:
