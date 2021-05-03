@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # common options
-ldapsearch_args="-b {{ base_dn }} -H ldapi:///"
-ldapsearch_external="ldapsearch -LLL -Q -Y EXTERNAL"
-ldapsearch_simple_bind="ldapsearch -LLL -x"
+ldapsearch_args="-LLL -b {{ base_dn }} -H ldapi:///"
+ldapsearch_external="ldapsearch -Q -Y EXTERNAL"
+ldapsearch_simple_bind="ldapsearch -x"
 
 ##############################################################
 echo "####################"
