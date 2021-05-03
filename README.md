@@ -6,11 +6,14 @@ OpenLDAP basic DIT with some OUs, some users and corresponding ACLs.
 - one simpleSecurityObject `ldap-admin` with `manage` permissions on everything
 - one simpleSecurityObject `sssd-user` with `read` permissions on everything
 - three regular users (`posixAccount` and `inetOrgPerson`) to use for actual logins
+- one `posixGroup` that the three regular users have as `gidNumber`
 
 Requirements
 ------------
 
 This role should be run against/on a LDAP server. Tested against OpenLDAP 2.4 on Debian 10 and CentOS 7 currently.
+
+The role will install any dependencies that Ansible's `ldap_attr` or `ldap_entry` modules need.
 
 Role Variables
 --------------
