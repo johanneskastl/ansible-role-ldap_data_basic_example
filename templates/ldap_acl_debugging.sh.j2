@@ -32,6 +32,6 @@ echo ""
 
 ##############################################################
 echo "ldapsearch as unprivileged user"
-$ldapsearch_simple_bind $ldapsearch_args -D uid=sssd-user,{{ users_ou }},{{ base_dn }} -w {{ regular_users_password }} "(cn=Ron Weasley)" uid
+$ldapsearch_simple_bind $ldapsearch_args -D "cn=Ron Weasley,{{ users_ou }},{{ base_dn }}" -w {{ regular_users_password }} "(cn=Ron Weasley)" uid
 echo "####################"
 echo ""
