@@ -8,7 +8,7 @@ ldapsearch_simple_bind="ldapsearch -x"
 ##############################################################
 echo "####################"
 echo "ldapsearch as rootDN"
-$ldapsearch_simple_bind $ldapsearch_args -D cn=b1admin,{{ base_dn }} -w {{ rootdn_password }} "(cn=Ron Weasley)" dn
+$ldapsearch_simple_bind $ldapsearch_args -D {{ rootdn_name }},{{ base_dn }} -w {{ rootdn_password }} "(cn=Ron Weasley)" dn
 
 ##############################################################
 echo "####################"
