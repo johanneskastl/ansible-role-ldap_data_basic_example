@@ -41,6 +41,7 @@
     - 'acl_3_protect_userPassword.ldif'
     - 'acl_4_protect_shadowLastChange.ldif'
     - 'acl_5_protect_ou_employee_attributes.ldif'
+    - 'acl_6_self_write_users_read.ldif'
     - 'acl_7_deny_access_to_everyone.ldif'
     - 'DELETE_acl_0_manage_permission_for_EXTERNAL.ldif'
     - 'DELETE_acl_1_manage_permission_for_ldap-admin.ldif'
@@ -49,3 +50,4 @@
     - 'DELETE_acl_4_protect_shadowLastChange.ldif'
     - 'DELETE_acl_7_deny_access_to_everyone.ldif'
     - 'DELETE_acl_5_protect_ou_employee_attributes.ldif'
+    - 'DELETE_acl_6_self_write_users_read.ldif'
