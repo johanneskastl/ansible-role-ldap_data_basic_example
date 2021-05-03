@@ -23,4 +23,5 @@
     dn: "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
     name: 'userPassword'
     values: "{{ ldap_admin_password_hash }}"
+    state: 'exact'
   ignore_errors: "{{ ignore_errors_ldap_admin }}"
