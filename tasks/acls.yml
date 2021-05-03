@@ -12,3 +12,4 @@
     - '{2}to * by dn="uid=sssd-user,ou=users,dc=training,dc=b1-systems,dc=de" read by * break'
     - '{3}to attrs=userPassword by self write by anonymous auth by users none'
     - '{4}to attrs=shadowLastChange by self write by * read'
+    - '{7}to * by * none'
