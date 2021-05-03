@@ -1,0 +1,23 @@
+---
+# ldap_data_basic_example/tasks/posix_group.yml
+
+- name: 'Create posix_group gryffindor'
+  ldap_entry:
+    dn: "cn=gryffindor,{{ groups_ou }},{{ base_dn }}"
+    objectClass:
+      - 'posixGroup'
+    attributes:
+      gidNumber: '9999'
+  register: create_posix_group
+
+- name: 'Create fact to ignore errors when in check_mode and the group would be created'
+  set_fact:
+    ignore_errors_posix_group: 'true'
+  when: 'create_posix_group.changed | bool and ansible_check_mode | bool'
+  check_mode: 'false'
+
+- name: 'Make sure all attributes are correct for the posix group'
+  ldap_attr:
+    dn: "cn=gryffindor,{{ groups_ou }},{{ base_dn }}"
+    name: 'gidNumber'
+    values: '9999'
