@@ -10,6 +10,7 @@ add_debugging_script_and_ldif_files: 'false'
 base_dn: 'dc=training,dc=b1-systems,dc=de'
 users_ou: 'ou=users'
 groups_ou: 'ou=groups'
+rootdn_name: 'cn=b1admin'
 
 # ignore errors in 'Make sure...' tasks in check mode
 # as Ansible's ldap_attrs cannot handle this
