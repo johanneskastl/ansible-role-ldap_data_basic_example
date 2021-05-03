@@ -23,4 +23,5 @@
     dn: "uid=sssd-user,{{ users_ou }},{{ base_dn }}"
     name: 'userPassword'
     values: "{{ sssd_user_password_hash }}"
+    state: 'exact'
   ignore_errors: "{{ ignore_errors_sssd_user }}"
