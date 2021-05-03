@@ -14,8 +14,7 @@ echo ""
 ##############################################################
 echo "####################"
 echo "ldapsearch as EXTERNAL"
-#$ldapsearch_external $ldapsearch_args "(cn=Ron Weasley)"
-ldapsearch -LLL -Q -Y EXTERNAL $ldapsearch_args "(cn=Ron Weasley)" dn
+$ldapsearch_external $ldapsearch_args "(cn=Ron Weasley)" dn
 echo ""
 
 ##############################################################
