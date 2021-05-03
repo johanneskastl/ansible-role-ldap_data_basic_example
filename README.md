@@ -21,6 +21,13 @@ This role has several parts, than can be enabled by setting some variables:
 - `add_debugging_script_and_ldif_files`: (default: false) Whether debugging script and LDIF files should be created
 - `remove_everything`: If you set this, the role will remove *EVERYTHING* it created, this includes files as well as directory entries. Only exception is the baseDN, as that cannot be deleted (easily).
 
+*Naming details*
+
+- `base_dn`: the desired baseDN, default value is `dc=training,dc=b1-systems,dc=de`
+- `users_ou`: desired name of the OU for users, default value is `ou=users`
+- `groups_ou`: desired name of the OU for groups, default value is `ou=groups`
+- `rootdn_name`: relative DN of the rootDN, the base_dn will be added automatically (settings this to `cn=b1admin` will make it `cn=b1admin,dc=training,dc=b1-systems,dc=de` when using the default value for the baseDN)
+
 *Password Hashes*
 - `ldap_admin_password_hash`: (required) hashed password for the ldap-admin user
 - `sssd_user_password_hash`: (required) hashed password for the sssd-user user
