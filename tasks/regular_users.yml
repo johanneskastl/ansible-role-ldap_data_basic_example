@@ -22,19 +22,19 @@
     - dn: 'cn=Harry Potter'
       uid: 'hpotter'
       uidnumber: '10001'
-      gidnumber: '10001'
+      gidnumber: '9999'
       sn: 'Potter'
       givenname: 'Harry'
     - dn: 'cn=Hermione Granger'
       uid: 'hgranger'
       uidnumber: '10002'
-      gidnumber: '10002'
+      gidnumber: '9999'
       sn: 'Granger'
       givenname: 'Hermione'
     - dn: 'cn=Ron Weasley'
       uid: 'rweasley'
       uidnumber: '10003'
-      gidnumber: '10003'
+      gidnumber: '9999'
       sn: 'Weasley'
       givenname:
         - 'Ronald'
@@ -60,7 +60,7 @@
       userPassword: "{{ regular_users_password_hash }}"
       uid: 'hpotter'
       uidNumber: '10001'
-      gidNumber: '10001'
+      gidNumber: '9999'
       sn: 'Potter'
       givenName: 'Harry'
   ignore_errors: "{{ ignore_errors_regular_users }}"
@@ -78,7 +78,7 @@
       userPassword: "{{ regular_users_password_hash }}"
       uid: 'hgranger'
       uidNumber: '10002'
-      gidNumber: '10002'
+      gidNumber: '9999'
       sn: 'Granger'
       givenName: 'Hermione'
   ignore_errors: "{{ ignore_errors_regular_users }}"
@@ -97,7 +97,7 @@
       userPassword: "{{ regular_users_password_hash }}"
       uid: 'rweasley'
       uidNumber: '10003'
-      gidNumber: '10003'
+      gidNumber: '9999'
       sn: 'Weasley'
       givenName:
         - 'Ronald'
