@@ -42,3 +42,9 @@ echo "####################"
 echo "ldapsearch for other DN as unprivileged user"
 $ldapsearch_simple_bind $ldapsearch_args -D "cn=Ron Weasley,{{ users_ou }},{{ base_dn }}" -w {{ regular_users_password }} "(cn=Harry Potter)" dn
 echo ""
+
+##############################################################
+echo "####################"
+echo "ldapsearch as anonymous (should fail with 'No such object (32)')"
+ldapsearch -x $ldapsearch_args "(cn=Ron Weasley)" dn
+echo ""
