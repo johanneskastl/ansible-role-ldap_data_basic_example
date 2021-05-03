@@ -1,0 +1,4 @@
+dn: olcDatabase={2}mdb,cn=config
+changetype: modify
+delete: olcAccess
+olcAccess: {6}to * by self write by users read by * break
