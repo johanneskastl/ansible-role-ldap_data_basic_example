@@ -26,6 +26,10 @@
   include_tasks: sssd_user.yml
   when: 'not remove_everything | bool'
 
+- name: 'Run posix_group.yml'
+  include_tasks: posix_group.yml
+  when: 'not remove_everything | bool'
+
 - name: 'Run regular_users.yml'
   include_tasks: regular_users.yml
   when: 'not remove_everything | bool'
