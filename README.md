@@ -41,7 +41,7 @@ Please note, the regular users will share the same password. This is for testing
 *Cleartext passwords*
 In case you set the `add_debugging_script_and_ldif_files` variable, this role will create a debugging script and lots of LDIF files to help with debugging. You can then delete and manually create users, groups or set/delete the ACLs.
 
-The debugging script needs the *cleartext* passwords of the users. This should obviously not be used on productive servers with real passwords!
+The debugging script needs the *cleartext* passwords of the users. This should obviously *not be used on productive servers with real passwords*!
 
 - `rootdn_password`: cleartext password of the rootDN
 - `ldap_admin_password`: cleartext password of the ldap-admin user
