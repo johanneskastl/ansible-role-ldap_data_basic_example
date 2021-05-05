@@ -84,7 +84,9 @@
       uidNumber: '10002'
       gidNumber: '9999'
       sn: 'Granger'
-      givenName: 'Hermione'
+      givenName:
+        - 'Hermione'
+        - 'Jean'
   ignore_errors: "{{ ignore_errors_regular_users }}"
 
 - name: 'Make sure all attributes are correct for Ron Weasley'
