@@ -32,7 +32,9 @@
       uidnumber: '10002'
       gidnumber: '9999'
       sn: 'Granger'
-      givenname: 'Hermione'
+      givenname:
+        - 'Hermione'
+        - 'Jean'
     - dn: 'cn=Ron Weasley'
       uid: 'rweasley'
       uidnumber: '10003'
