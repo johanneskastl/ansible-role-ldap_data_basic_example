@@ -24,7 +24,9 @@
       uidnumber: '10001'
       gidnumber: '9999'
       sn: 'Potter'
-      givenname: 'Harry'
+      givenname:
+        - 'Harry'
+        - 'James'
     - dn: 'cn=Hermione Granger'
       uid: 'hgranger'
       uidnumber: '10002'
