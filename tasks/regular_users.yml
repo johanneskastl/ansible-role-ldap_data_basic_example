@@ -63,7 +63,9 @@
       uidNumber: '10001'
       gidNumber: '9999'
       sn: 'Potter'
-      givenName: 'Harry'
+      givenName:
+        - 'Harry'
+        - 'James'
   ignore_errors: "{{ ignore_errors_regular_users }}"
 
 - name: 'Make sure all attributes are correct for Hermione Granger'
