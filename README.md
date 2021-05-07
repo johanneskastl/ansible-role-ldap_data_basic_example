@@ -56,9 +56,42 @@ None
 Example Playbook
 ----------------
 
-    - hosts: servers
-      roles:
-        - { role: 'johanneskastl.ldap_data_basic_example' }
+A simple playbook that will only do the minimum will look like this:
+```
+- hosts: servers
+  roles:
+    - { role: 'johanneskastl.ldap_data_basic_example' }
+```
+
+To delete everything this role created, use a playbook like this:
+```
+- hosts: servers
+  roles:
+    - role: 'johanneskastl.ldap_data_basic_example'
+      vars:
+       remove_everything: 'true' 
+```
+
+
+A playbook that will not only create the groups and users in LDAP but also create the debugging script and LDIF files will be a little more work:
+```
+- hosts: servers
+  roles:
+    - role: 'johanneskastl.ldap_data_basic_example'
+      vars:
+        # create ACL debugging script
+        add_debugging_script_and_ldif_files: 'true'
+        rootdn_name: 'cn=Manager'
+        # Password Hashes
+        ldap_admin_password_hash: '{SSHA}0123456789abcdef}'
+        sssd_user_password_hash: '{SSHA}567890abcdef12345'
+        regular_users_password_hash: '{SSHA}'
+        # Passwords
+        rootdn_password: 'totallysupersecret'
+        ldap_admin_password: 'alsoreallysecret'
+        sssd_user_password: 'shouldalsobesecret'
+        regular_users_password: 'secret'
+```
 
 License
 -------
