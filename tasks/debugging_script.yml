@@ -37,6 +37,7 @@
     - 'DELETE_step5_regular_users.ldapdelete'
     - 'acl_0_manage_permission_for_EXTERNAL.ldif'
     - 'acl_1_manage_permission_for_ldap-admin.ldif'
+    - 'acl_2_write_permission_for_syncrepl_user.ldif'
     - 'acl_3_read_permission_for_sssd-user.ldif'
     - 'acl_4_protect_userPassword.ldif'
     - 'acl_5_protect_shadowLastChange.ldif'
