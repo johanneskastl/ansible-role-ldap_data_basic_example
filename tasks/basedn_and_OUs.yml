@@ -21,3 +21,10 @@
     objectClass:
       - 'top'
       - 'organizationalUnit'
+
+- name: 'Create the system OU'
+  ldap_entry:
+    dn: "{{ system_ou }},{{ base_dn }}"
+    objectClass:
+      - 'top'
+      - 'organizationalUnit'
