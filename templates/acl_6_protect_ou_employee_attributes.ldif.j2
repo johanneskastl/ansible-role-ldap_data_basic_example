@@ -1,0 +1,4 @@
+dn: olcDatabase={2}mdb,cn=config
+changetype: modify
+add: olcAccess
+olcAccess: {6}to attrs=ou,employeeNumber,employeeType by self read by * none
