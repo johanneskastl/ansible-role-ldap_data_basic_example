@@ -19,6 +19,10 @@
   include_tasks: basedn_and_OUs.yml
   when: 'not remove_everything | bool'
 
+- name: 'Run replication_user_and_ou.yml'
+  include_tasks: replication_user_and_ou.yml
+  when: 'not remove_everything | bool'
+
 - name: 'Run ldap-admin.yml'
   include_tasks: ldap-admin.yml
   when: 'not remove_everything | bool'
