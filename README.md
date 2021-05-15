@@ -45,7 +45,7 @@ The debugging script needs the *cleartext* passwords of the users. This should o
 
 - `rootdn_password`: cleartext password of the rootDN
 - `ldap_admin_password`: cleartext password of the ldap-admin user
-- `ssd_user_password`: cleartext password of the sssd-user
+- `sssd_user_password`: cleartext password of the sssd-user
 - `regular_users_password`: cleartext password of the regular users
 
 Dependencies
