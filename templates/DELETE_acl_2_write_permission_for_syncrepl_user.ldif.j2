@@ -1,0 +1,4 @@
+dn: olcDatabase={2}mdb,cn=config
+changetype: modify
+delete: olcAccess
+olcAccess: {2}to * by dn="uid=syncrepl,ou=system,dc=training,dc=b1-systems,dc=de" write by * break

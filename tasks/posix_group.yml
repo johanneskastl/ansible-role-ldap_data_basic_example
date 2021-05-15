@@ -21,3 +21,4 @@
     dn: "cn=gryffindor,{{ groups_ou }},{{ base_dn }}"
     name: 'gidNumber'
     values: '9999'
+  ignore_errors: "{{ ignore_errors_posix_group }}"

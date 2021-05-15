@@ -1,4 +1,4 @@
 dn: olcDatabase={2}mdb,cn=config
 changetype: modify
 delete: olcAccess
-olcAccess: {4}to attrs=shadowLastChange by self write by * read
+olcAccess: {7}to * by self write by users read by * break
