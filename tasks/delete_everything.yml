@@ -13,7 +13,7 @@
     - "uid=syncrepl,{{ system_ou }},{{ base_dn }}"
     - "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
 
-- name: 'Delete groups'
+- name: 'Delete OUs'
   ldap_entry:
     dn: "{{ item }}"
     state: 'absent'
