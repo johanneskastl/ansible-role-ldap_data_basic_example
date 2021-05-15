@@ -25,6 +25,7 @@
   loop:
     - "{{ users_ou }},{{ base_dn }}"
     - "{{ groups_ou }},{{ base_dn }}"
+    - "{{ system_ou }},{{ base_dn }}"
 
 # The base DN cannot be deleted...
 
