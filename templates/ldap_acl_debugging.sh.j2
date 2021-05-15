@@ -22,6 +22,11 @@ $ldapsearch_simple_bind $ldapsearch_args -D uid=ldap-admin,{{ users_ou }},{{ bas
 
 ##############################################################
 echo "####################"
+echo "ldapsearch as syncrepl"
+$ldapsearch_simple_bind $ldapsearch_args -D uid=syncrepl,{{ system_ou }},{{ base_dn }} -w {{ ldap_admin_password }} "(cn=Ron Weasley)" dn
+
+##############################################################
+echo "####################"
 echo "ldapsearch for Ron as sssd-user"
 $ldapsearch_simple_bind $ldapsearch_args -D uid=sssd-user,{{ users_ou }},{{ base_dn }} -w {{ sssd_user_password }} "(cn=Ron Weasley)" dn
 
