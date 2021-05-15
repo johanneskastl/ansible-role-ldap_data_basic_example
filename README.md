@@ -85,7 +85,7 @@ A playbook that will not only create the groups and users in LDAP but also creat
         # Password Hashes
         ldap_admin_password_hash: '{SSHA}0123456789abcdef}'
         sssd_user_password_hash: '{SSHA}567890abcdef12345'
-        regular_users_password_hash: '{SSHA}'
+        regular_users_password_hash: '{SSHA}abcdef123456789'
         # Passwords
         rootdn_password: 'totallysupersecret'
         ldap_admin_password: 'alsoreallysecret'
