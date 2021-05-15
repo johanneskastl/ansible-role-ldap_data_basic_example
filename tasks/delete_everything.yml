@@ -13,6 +13,11 @@
     - "uid=syncrepl,{{ system_ou }},{{ base_dn }}"
     - "uid=ldap-admin,{{ users_ou }},{{ base_dn }}"
 
+- name: 'Delete posix_group gryffindor'
+  ldap_entry:
+    dn: "cn=gryffindor,{{ groups_ou }},{{ base_dn }}"
+    state: 'absent'
+
 - name: 'Delete OUs'
   ldap_entry:
     dn: "{{ item }}"
