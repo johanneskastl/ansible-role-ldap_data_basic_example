@@ -1,9 +1,9 @@
-dn: cn=posix_user_group,ou=groups,dc=training,dc=b1-systems,dc=de
+dn: cn=posix_user_group,ou=groups,{{ base_dn }}
 objectClass: posixGroup
 gidNumber: 9999
 cn: posix_user_group
 
-dn: cn=Harry Potter,ou=users,dc=training,dc=b1-systems,dc=de
+dn: cn=Harry Potter,ou=users,{{ base_dn }}
 objectClass: posixAccount
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
@@ -18,7 +18,7 @@ gidNumber: 9999
 sn: Potter
 givenName: Harry
 
-dn: cn=Hermione Granger,ou=users,dc=training,dc=b1-systems,dc=de
+dn: cn=Hermione Granger,ou=users,{{ base_dn }}
 objectClass: posixAccount
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
@@ -33,7 +33,7 @@ gidNumber: 9999
 sn: Granger
 givenName: Hermione
 
-dn: cn=Ron Weasley,ou=users,dc=training,dc=b1-systems,dc=de
+dn: cn=Ron Weasley,ou=users,{{ base_dn }}
 objectClass: posixAccount
 objectClass: inetOrgPerson
 objectClass: organizationalPerson
