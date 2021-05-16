@@ -1,4 +1,4 @@
 dn: olcDatabase={2}mdb,cn=config
 changetype: modify
 delete: olcAccess
-olcAccess: {1}to * by dn="uid=ldap-admin,ou=users,{{ base_dn }}" manage by * break
+olcAccess: {1}to * by dn="uid=ldap-admin,{{ users_ou }},{{ base_dn }}" manage by * break
