@@ -1,4 +1,4 @@
 dn: olcDatabase={2}mdb,cn=config
 changetype: modify
 add: olcAccess
-olcAccess: {3}to * by dn="uid=sssd-user,ou=users,dc=training,dc=b1-systems,dc=de" read by * break
+olcAccess: {3}to * by dn="uid=sssd-user,ou=users,{{ base_dn }}" read by * break
