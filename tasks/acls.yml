@@ -8,9 +8,9 @@
     values: "{{ item }}"
   loop:
     - '{0}to * by dn.exact=gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth manage by * break'
-    - '{1}to * by dn="uid=ldap-admin,ou=users,dc=training,dc=b1-systems,dc=de" manage by * break'
-    - '{2}to * by dn="uid=syncrepl,ou=system,dc=training,dc=b1-systems,dc=de" write by * break'
-    - '{3}to * by dn="uid=sssd-user,ou=users,dc=training,dc=b1-systems,dc=de" read by * break'
+    - '{1}to * by dn="uid=ldap-admin,ou=users,{{ base_dn }}" manage by * break'
+    - '{2}to * by dn="uid=syncrepl,ou=system,{{ base_dn }}" write by * break'
+    - '{3}to * by dn="uid=sssd-user,ou=users,{{ base_dn }}" read by * break'
     - '{4}to attrs=userPassword by self write by anonymous auth by users none'
     - '{5}to attrs=shadowLastChange by self write by * read'
     - '{6}to attrs=ou,employeeNumber,employeeType by self read by * none'
