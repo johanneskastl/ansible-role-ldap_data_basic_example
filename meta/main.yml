@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'ldap_data_basic_example'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'OpenLDAP basic DIT with some OUs, some users and corresponding ACLs'
   company: 'B1 Systems GmbH'
