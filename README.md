@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-ldap_data_basic_example/workflows/Ansible%20Lint/badge.svg)
+
 ldap_data_basic_example
 =========
 
